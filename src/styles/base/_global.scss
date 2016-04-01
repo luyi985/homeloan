@@ -21,8 +21,10 @@
 }
 
 
-.round-5{
-	@include border-radius(5px);
+.round{
+	&-5{
+		@include border-radius(5px);
+	}
 }
 
 .no{
