@@ -317,11 +317,16 @@ table {
 td, th {
   padding: 0; }
 
+.clearfix:after, .g-row:after {
+  content: '';
+  display: table;
+  clear: both; }
+
 .transition {
   -webkit-transition: all 300ms ease-in-out;
   transition: all 300ms ease-in-out; }
 
-.box-size-border, label, input, table, .table, table th, table td, table .table-cell, .table th, .table td, .table .table-cell, table tr, table .table-row, .table tr, .table .table-row {
+.box-size-border, .g-row, [class^='.g-col-'], label, input, table, .table, table th, table td, table .table-cell, .table th, .table td, .table .table-cell, table tr, table .table-row, .table tr, .table .table-row {
   box-sizing: border-box; }
 .box-size-content {
   box-sizing: content-box; }
@@ -383,6 +388,12 @@ td, th {
   margin: -1px;
   padding: 0;
   border: 0; }
+
+.g-row {
+  width: 100%; }
+
+[class^='.g-col-'] {
+  float: left; }
 
 html {
   color: #333;

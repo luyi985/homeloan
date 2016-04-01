@@ -1,0 +1,11 @@
+
+
+.g-row{
+	@extend .clearfix;
+	@extend .box-size-border;
+	width: 100%;
+}
+[class^='.g-col-']{
+	@extend .box-size-border;
+	float: left;
+}
