@@ -1,0 +1,78 @@
+// Global CSS goes here
+.transition{
+	-webkit-transition: all 300ms ease-in-out;
+	-moz-transition: all 300ms ease-in-out;
+	-ms-transition: all 300ms ease-in-out;
+	-o-transition: all 300ms ease-in-out;
+	transition: all 300ms ease-in-out;
+}
+
+.box-size{
+	&-border{
+		-moz-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+	&-content{
+		-moz-box-sizing: content-box;
+		-webkit-box-sizing: content-box;
+		box-sizing: content-box;
+	}
+}
+
+
+.round-5{
+	@include border-radius(5px);
+}
+
+.no{
+	&-outline{
+		&-a{outline: none;}
+	}
+	&-margin{
+		&-l{margin-left:0px;}
+		&-r{margin-right:0px;}
+		&-t{margin-top:0px;}
+		&-b{margin-bottom:0px;}
+		&-a{margin:0px;}
+	}
+	&-padding{
+		&-l{padding-left:0px;}
+		&-r{padding-right:0px;}
+		&-t{padding-top:0px;}
+		&-b{padding-bottom:0px;}
+		&-a{padding:0px;}
+	}
+}
+
+
+.border{
+	&-black-1{border:1px solid #000;}
+	&-input{border:$input-border;}
+}
+
+.text{
+	&-primary-color{color: #555;}
+}
+
+.bg{
+	&-none{background-color: transparent;}
+}
+
+.line-height{
+	&-none{line-height: 1;}
+	&-normal{line-height: 1.5;}
+	&-heading{line-height: 1.2;}
+}
+
+
+.invisiable{
+	position: absolute; 
+  	overflow: hidden; 
+  	clip: rect(0 0 0 0); 
+  	height: 1px;
+  	width: 1px; 
+  	margin: -1px;
+  	padding: 0;
+  	border: 0; 
+}

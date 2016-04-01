@@ -1,0 +1,25 @@
+
+label{
+	@extend .box-size-border;
+}
+
+input{
+	@extend .box-size-border;
+	width: 100%;
+	&[type='text'],
+	&[type='email'],
+	&[type='password']{
+		@extend .no-outline-a;
+		@extend .round-5;
+		@extend .no-margin-a;
+		@extend .border-input;
+		padding: $input-padding;
+		color: inherit;
+		background-color: inherit;
+	}
+	&[type='radio'],
+	&[type='checkbox']{
+		@extend .invisiable;
+	}
+}
+

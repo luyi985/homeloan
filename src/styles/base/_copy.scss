@@ -1,0 +1,81 @@
+html{
+	color: $text-primary-color;
+	font-size: $base-size;
+}
+
+
+
+span,
+p,
+td,
+tr,
+li,
+i,
+dt,
+h1,
+h2,
+h3,
+h4,
+h5{
+	color: inherit;
+}
+
+
+.copy-base{
+	@extend .no-margin-a;
+	@extend .line-height-normal;
+}
+
+header,
+footer,
+section,
+div,
+span,
+p,
+td,
+tr,
+li,
+i,
+dt{
+	@extend .copy-base;
+	font-size: $normal-size;
+}
+
+
+.heading-base{
+	@extend .no-margin-a;
+	@extend .line-height-heading;
+}
+
+.h1,h1{
+	@extend .heading-base;
+	font-size: $h1-size;
+}
+.h2,h2{
+	@extend .heading-base;
+	font-size: $h2-size;
+}
+.h3,h3{
+	@extend .heading-base;
+	font-size: $h3-size;
+}
+.h4,h4{
+	@extend .heading-base;
+	font-size: $h4-size;
+}
+.h5,h5{
+	@extend .heading-base;
+	font-size: $h5-size;
+}
+
+
+.text{
+	&-hero{
+		@extend .heading-base;
+		font-weight: bold;
+		font-size: $hero-size;
+	}
+	&-normal-color{
+		color: $text-primary-color;
+	}
+}

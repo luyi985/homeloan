@@ -1,0 +1,58 @@
+table,
+.table{
+	@extend .no-padding-a;
+	@extend .no-margin-a;
+	@extend .box-size-border;
+	th,td,.table-cell{
+		@extend .box-size-border;
+		padding: $table-padding;
+	}
+	color: $table-text-color;
+	border-color: $table-border-color;
+	tr,.table-row{
+		@extend .no-padding-a;
+		@extend .no-margin-a;
+		@extend .box-size-border;
+	}
+	thead>tr{background-color: $table-head-color;}
+	tbody>tr{background-color: $table-body-color;}
+	&-hover{
+		tbody>tr:hover{background-color: $table-hover-color;}
+	}
+	&-bg-none{
+		tr{@extend .bg-none;}
+	}
+	&-align{
+		&-top{
+			td,th,.table-cell{
+				vertical-align: top;
+			}
+		}
+		&-middle{
+			td,th,.table-cell{
+				vertical-align: middle;
+			}
+		}
+		&-bottom{
+			td,th,.table-cell{
+				vertical-align: bottom;
+			}
+		}
+		&-baseline{
+			td,th,.table-cell{
+				vertical-align: baseline;
+			}
+		}
+	}
+	.table-cell{
+		display: table-cell;
+		color: inherit;
+	}
+	.table-row{
+		display: table-row;
+	}
+}
+.table{
+	display: table;
+	color: inherit;
+}
