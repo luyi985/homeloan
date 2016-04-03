@@ -10,10 +10,7 @@ var homeloan= new homeLoanCalMod({
 
 homeloan.cal();
 homeloan.dis();
-/*
-$('input').change(function(){
-	homeloan.cal();
-
 $("#update").click(function(){
+	homeloan.cal();
 	homeloan.dis();
-});*/
+});

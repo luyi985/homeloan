@@ -1928,14 +1928,8 @@ var homeLoanCalMod = (function () {
 		_classCallCheck(this, homeLoanCalMod);
 
 		this.o = o;
-		this.totalMog = 0;
-		this.rate = 0;
-		this.repay = 0;
-		this.toBank = 0;
-		this.saving = 0;
 		this.rootEle = o.root;
-		this.paid = 0;
-		this.result = [];
+		this.updateVal();
 	}
 
 	_createClass(homeLoanCalMod, [{
@@ -1950,15 +1944,23 @@ var homeLoanCalMod = (function () {
 			return intr > 0 ? intr : 0;
 		}
 	}, {
-		key: "cal",
-		value: function cal() {
+		key: "updateVal",
+		value: function updateVal() {
 			this.totalMog = parseInt(this.o.total.val()) || 0;
 			this.rate = parseFloat(this.o.rate.val() * .01) || 0;
 			this.repay = parseInt(this.o.repay.val()) || 0;
 			this.toBank = parseInt(this.o.toBank.val()) || 0;
 			this.saving = parseInt(this.o.saving.val()) || 0;
+			this.paid = 0;
+			this.result = [];
+			this.result.length = 0;
+		}
+	}, {
+		key: "cal",
+		value: function cal() {
 			var month = 0;
 			var currentSaving, thisMonthPay, currentRemaining, thisMonthInterest, currentPaid;
+			this.updateVal();
 			currentSaving = this.saving;
 			while (this.paid < this.totalMog) {
 				month++;
@@ -1977,6 +1979,7 @@ var homeLoanCalMod = (function () {
 			var content = "<tr>" + this.result.map(function (v) {
 				return "<td>" + v.join("</td><td>") + "</td>";
 			}).join("</tr><tr>") + "</tr>";
+			this.rootEle.html("");
 			this.rootEle.html(content);
 		}
 	}]);
@@ -1995,10 +1998,7 @@ var homeloan = new homeLoanCalMod({
 
 homeloan.cal();
 homeloan.dis();
-/*
-$('input').change(function(){
+$("#update").click(function () {
 	homeloan.cal();
-
-$("#update").click(function(){
 	homeloan.dis();
-});*/
+});
