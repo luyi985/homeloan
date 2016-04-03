@@ -8,8 +8,8 @@ var homeloan= new homeLoanCalMod({
 });
 
 
-homeloan.cal();
-homeloan.dis();
+//homeloan.cal();
+//homeloan.dis();
 $("#update").click(function(){
 	homeloan.cal();
 	homeloan.dis();

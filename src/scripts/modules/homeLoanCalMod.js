@@ -12,11 +12,11 @@ class homeLoanCalMod{
 	}
 
 	updateVal(){
-		this.totalMog=parseInt(this.o.total.val())||0;
-		this.rate=parseFloat(this.o.rate.val()*.01)||0;
-		this.repay=parseInt(this.o.repay.val())||0;
-		this.toBank=parseInt(this.o.toBank.val())||0;
-		this.saving=parseInt(this.o.saving.val())||0;
+		this.totalMog 		=		parseInt(this.o.total.val())||0;
+		this.rate 			=		parseFloat(this.o.rate.val()*.01)||0;
+		this.repay 			=		parseInt(this.o.repay.val())||0;
+		this.toBank 		=		parseInt(this.o.toBank.val())||0;
+		this.saving 		=		parseInt(this.o.saving.val())||0;
 		this.paid=0;
 		this.result=[];
 		this.result.length=0;
@@ -44,11 +44,9 @@ class homeLoanCalMod{
 		}
 
 	}
-
-
 	dis(){
 		var content="<tr>"+this.result.map(v=>{
-			return "<td>"+v.join("</td><td>")+"</td>";
+			return "<td class="+(v[2]>0?'st1':'st2')+">"+v.join("</td><td class="+(v[2]>0?'st1':'st2')+">")+"</td>";
 		}).join("</tr><tr>")+"</tr>";
 		this.rootEle.html("");
 		this.rootEle.html(content);

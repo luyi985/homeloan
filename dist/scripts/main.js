@@ -1977,7 +1977,7 @@ var homeLoanCalMod = (function () {
 		key: "dis",
 		value: function dis() {
 			var content = "<tr>" + this.result.map(function (v) {
-				return "<td>" + v.join("</td><td>") + "</td>";
+				return "<td class=" + (v[2] > 0 ? 'st1' : 'st2') + ">" + v.join("</td><td class=" + (v[2] > 0 ? 'st1' : 'st2') + ">") + "</td>";
 			}).join("</tr><tr>") + "</tr>";
 			this.rootEle.html("");
 			this.rootEle.html(content);
@@ -1996,8 +1996,8 @@ var homeloan = new homeLoanCalMod({
 	root: $('#root')
 });
 
-homeloan.cal();
-homeloan.dis();
+//homeloan.cal();
+//homeloan.dis();
 $("#update").click(function () {
 	homeloan.cal();
 	homeloan.dis();

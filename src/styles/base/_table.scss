@@ -51,6 +51,13 @@ table,
 	.table-row{
 		display: table-row;
 	}
+
+	td{
+		&.st1{}
+		&.st2{background-color: rgba( 0,125,0,.5);}
+	}
+
+
 }
 .table{
 	display: table;
