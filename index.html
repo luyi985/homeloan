@@ -9,61 +9,46 @@
   <link rel="stylesheet" href="dist/styles/screen.min.css">
 </head>
 <body>
-
-	<h1>head</h1>
-	<h2>head</h2>
-	<h3>head</h3>
-	<h4>head</h4>
-	<h5>head</h5>
-	<div class="text-hero">head</div>
-
   <div id="app">
-	<div class="table-align-middle table">
+	<div class="table-align-middle table position-fix position-fix-top-right">
 		<div class="table-row">
 			<div class="table-cell"><label for="total">TOTAL BALANCE:</label></div>
-			<div class="table-cell"><input id="total" type="text"></div>
+			<div class="table-cell"><input id="total" type="text" value="744000"></div>
 		</div>
 		<div class="table-row">
 			<div class="table-cell"><label for="rate">INTEREST RATE:</label></div>
-			<div class="table-cell"><input id="rate" type="text"></div>
+			<div class="table-cell"><input id="rate" type="text" value="5.0"></div>
 		</div>
 		<div class="table-row">
-			<div class="table-cell"><label for="repay">PREPAY AMMOUNT/MONTHLY:</label></div>
-			<div class="table-cell"><input id="repay" type="text"></div>
+			<div class="table-cell"><label for="repay">REPAY AMMOUNT/MONTHLY:</label></div>
+			<div class="table-cell"><input id="repay" type="text" value="8000"></div>
 		</div>
+    <div class="table-row">
+      <div class="table-cell"><label for="payToBank">PAY TO BANK/MONTHLY:</label></div>
+      <div class="table-cell"><input id="payToBank" type="text" value="3900"></div>
+    </div>
+    <div class="table-row">
+      <div class="table-cell"><label for="saving">INITIAL SAVING:</label></div>
+      <div class="table-cell"><input id="saving" type="text" value="140000"></div>
+    </div>
+    <div class="table-row">
+      <div class="table-cell">&nbsp;</div>
+      <div class="table-cell">
+          <button id="update">Update</button>
+      </div>
+    </div>
 	</div>  	
   	<table border=1 class="table-hover">
   		<thead>
   			<tr>
   				<th>Month</th>
-  				<th>Monthly Payment</th>
+  				<th>Current Saving</th>
   				<th>Interest to Pay</th>
   				<th>Paid</th>
   				<th>Remaining Balance</th>
   			</tr>
   		</thead>
-  		<tbody>
-  			<tr>
-  				<td>Month</td>
-  				<td>Monthly Payment</td>
-  				<td>Interest to Pay</td>
-  				<td>Paid</td>
-  				<td>Remaining Balance</td>
-  			</tr>
-  			<tr>
-  				<td>Month</td>
-  				<td>Monthly Payment</td>
-  				<td>Interest to Pay</td>
-  				<td>Paid</td>
-  				<td><input type="text"></td>
-  			</tr>
-  			<tr>
-  				<td>Month</td>
-  				<td>Monthly Payment</td>
-  				<td>Interest to Pay</td>
-  				<td>Paid</td>
-  				<td>Remaining Balance</td>
-  			</tr>
+  		<tbody id="root">
   		</tbody>
   	</table>
   </div>
