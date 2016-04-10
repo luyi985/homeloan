@@ -20,6 +20,7 @@ class homeLoanCalMod{
 		this.paid=0;
 		this.result=[];
 		this.result.length=0;
+		this.totalInterst=0;
 	}
 	cal(){
 		var month=0;
@@ -29,6 +30,7 @@ class homeLoanCalMod{
 		while( this.paid<this.totalMog ){
 			month++;
 			thisMonthInterest	= 	this.getIntrThisMonth(currentSaving);
+			this.totalInterst 	+= 	thisMonthInterest;
 			thisMonthPay 		= 	this.toBank - thisMonthInterest;
 			this.updatePaid( thisMonthPay );
 			currentPaid			=	this.paid;
@@ -44,11 +46,17 @@ class homeLoanCalMod{
 		}
 
 	}
+	summary(){
+		var st2=document.getElementsByClassName("st2")[0].innerHTML;
+		document.getElementsByClassName("clearTime")[0].innerHTML=Math.floor(Math.floor(st2/12))+ " YEARS "+ st2%12 + " MONTHS ";
+		document.getElementsByClassName("interestPaid")[0].innerHTML="$ "+Math.round(this.totalInterst*100)/100;
+	}
 	dis(){
 		var content="<tr>"+this.result.map(v=>{
 			return "<td class="+(v[2]>0?'st1':'st2')+">"+v.join("</td><td class="+(v[2]>0?'st1':'st2')+">")+"</td>";
 		}).join("</tr><tr>")+"</tr>";
 		this.rootEle.html("");
 		this.rootEle.html(content);
+		this.summary();
 	}
 }

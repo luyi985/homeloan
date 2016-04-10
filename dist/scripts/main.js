@@ -1954,6 +1954,7 @@ var homeLoanCalMod = (function () {
 			this.paid = 0;
 			this.result = [];
 			this.result.length = 0;
+			this.totalInterst = 0;
 		}
 	}, {
 		key: "cal",
@@ -1965,6 +1966,7 @@ var homeLoanCalMod = (function () {
 			while (this.paid < this.totalMog) {
 				month++;
 				thisMonthInterest = this.getIntrThisMonth(currentSaving);
+				this.totalInterst += thisMonthInterest;
 				thisMonthPay = this.toBank - thisMonthInterest;
 				this.updatePaid(thisMonthPay);
 				currentPaid = this.paid;
@@ -1974,6 +1976,13 @@ var homeLoanCalMod = (function () {
 			}
 		}
 	}, {
+		key: "summary",
+		value: function summary() {
+			var st2 = document.getElementsByClassName("st2")[0].innerHTML;
+			document.getElementsByClassName("clearTime")[0].innerHTML = Math.floor(Math.floor(st2 / 12)) + " YEARS " + st2 % 12 + " MONTHS ";
+			document.getElementsByClassName("interestPaid")[0].innerHTML = "$ " + Math.round(this.totalInterst * 100) / 100;
+		}
+	}, {
 		key: "dis",
 		value: function dis() {
 			var content = "<tr>" + this.result.map(function (v) {
@@ -1981,6 +1990,7 @@ var homeLoanCalMod = (function () {
 			}).join("</tr><tr>") + "</tr>";
 			this.rootEle.html("");
 			this.rootEle.html(content);
+			this.summary();
 		}
 	}]);
 
